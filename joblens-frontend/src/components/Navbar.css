@@ -1,0 +1,57 @@
+/* src/components/Navbar.css */
+.navbar {
+  position: sticky; top: 0; z-index: 100;
+  background: rgba(10,10,15,0.85);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border);
+  height: 64px;
+}
+.navbar-inner {
+  display: flex; align-items: center; height: 64px; gap: 32px;
+}
+.navbar-logo {
+  display: flex; align-items: center; gap: 10px;
+  text-decoration: none; flex-shrink: 0;
+}
+.logo-icon { font-size: 22px; color: var(--accent); line-height: 1; }
+.logo-text {
+  font-family: var(--font-head); font-size: 20px; font-weight: 800;
+  color: var(--text); letter-spacing: -0.5px;
+}
+.logo-accent { color: var(--accent); }
+.navbar-links { display: flex; align-items: center; gap: 4px; flex: 1; }
+.nav-link {
+  padding: 6px 14px; border-radius: var(--radius-sm);
+  text-decoration: none; color: var(--text2); font-size: 14px; font-weight: 500;
+  transition: all 0.2s;
+}
+.nav-link:hover { color: var(--text); background: var(--card); }
+.nav-link.active { color: var(--accent); background: rgba(108,99,255,0.1); }
+.navbar-auth { display: flex; align-items: center; gap: 8px; flex-shrink: 0; }
+.navbar-user {
+  display: flex; align-items: center; gap: 8px;
+  font-size: 14px; font-weight: 500; color: var(--text2);
+}
+.user-avatar {
+  width: 30px; height: 30px; border-radius: 50%;
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  display: flex; align-items: center; justify-content: center;
+  font-size: 13px; font-weight: 700; color: #fff; font-family: var(--font-head);
+}
+.hamburger { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 4px; }
+.hamburger span { display: block; width: 22px; height: 2px; background: var(--text2); border-radius: 2px; transition: 0.2s; }
+.mobile-menu {
+  display: flex; flex-direction: column;
+  background: var(--bg2); border-top: 1px solid var(--border); padding: 16px 24px;
+}
+.mobile-menu a, .mobile-menu button {
+  padding: 12px 0; color: var(--text2); text-decoration: none;
+  border: none; background: none; font-family: var(--font-body); font-size: 15px;
+  text-align: left; cursor: pointer; border-bottom: 1px solid var(--border);
+}
+.mobile-menu a:last-child, .mobile-menu button:last-child { border-bottom: none; }
+
+@media (max-width: 768px) {
+  .navbar-links, .navbar-auth { display: none; }
+  .hamburger { display: flex; margin-left: auto; }
+}
